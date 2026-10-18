@@ -25,6 +25,7 @@ async function render(){if(!client)return;const {data:{session}}=await client.au
   :hasMembership?'5 günlük PRO Beta süren doldu veya erişimin askıya alındı. Yeni davet kodu bu hesapta otomatik süre uzatmaz.'
   :'Hesabın oluşturuldu. 5 günlük PRO Private Beta için geçerli davet kodunu gir.';
  $('inviteForm').hidden=hasMembership;
+ const link=$('cloudDashboardLink'); if(link)link.hidden=!active;
 }
 if(!configured){$('setupNotice').hidden=false;document.querySelectorAll('.auth-form button[type=submit]').forEach(b=>b.disabled=true)}
 else{
